@@ -1,4 +1,4 @@
-// generate a table of coin hold with values
+// generate a table of cryptos with their values in AUD
 //  Arguments
 //   - coinHolding: Array of objects with properties {id, quantity}
 //   - table: table element to display the data
