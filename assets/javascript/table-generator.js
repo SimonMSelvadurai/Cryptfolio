@@ -1,9 +1,10 @@
 // generate a table of coin hold with values
 //  Arguments
 //   - coinHolding: Array of objects with properties {id, quantity}
+//   - table: table element to display the data
 //  Note
 //   - Object must have properties "id" and "quantity" in order to execute properly 
-//   - The "id" is used to make an API call to CoinGecko. If it is misspell, the response 
+//   - Each "id" is used to make an API call to CoinGecko. If it is misspell, the response 
 //     will be null.
  
 function generateCoinTable(coinHolding, table) {
