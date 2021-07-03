@@ -2,28 +2,59 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8" />
-    <!-- Reset CSS stylesheet included to ensure best practices.-->
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Bulma CSS library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
-    <title>Code Quiz</title>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Reset CSS stylesheet included to ensure best practices.-->
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- scripts -->
+  <script src="./assets/javascript/components/table.js"></script>
+  <script src="./assets/javascript/api-util.js"></script>
+  <script src="./assets/javascript/table-generator.js"></script>
+
+  <!-- title -->
+  <title>Cryptfolio</title>
 </head>
 
 <body>
+  <header>
 
-    <header>
+  </header>
+  <main>
 
-    </header>
-    <main>
+    <div class="container">
+      <table id="coin-table" class="table is-striped is-fullwidth">
+        <thead >
+          <tr class="title is-6 ">
+            <th data-head="name"><abbr title="Name of currency">Currency</abbr></th>
+            <th data-head="symbol"><abbr title="Currency code symbol">Symbol</abbr></th>
+            <th data-head="quantity"><abbr title="Number of tokens held">Tokens</abbr></th>
+            <th data-head="price"><abbr title="Price per unit">Price</abbr></th>
+            <th data-head="value"><abbr title="Value of currency held">Value</abbr></th>
+            <th data-head="edit"><abbr title="Edit item">Edit</abbr></th>
+            <th data-head="remove"><abbr title="remove item">remove</abbr></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
 
-        <script src="assets/javascript/script.js"></script>
-    </main>
-    <footer>
 
+    <script src="./assets/javascript/script.js"></script>
+    <script src="./assets/javascript/test.js"></script>
+  </main>
+  <footer>
 
-    </footer>
+  </footer>
 </body>
 
 </html>
