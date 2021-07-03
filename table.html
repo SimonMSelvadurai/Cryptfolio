@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptfolio Table</title>
+    <!-- Reset CSS stylesheet included to ensure best practices.-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel='stylesheet' href=
+'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="./assets/javascript/api-util.js"></script>
+<style>
+    
+
+</style>
+
+</head>
+<body>
+    <div class='container has-text-centered has-background-color-'>
+        <div class='columns is-mobile is-centered'>
+          <div class='column is-8'>
+            <div>
+              <h1 class='title'>My Cryptfolio</h1>
+              <hr>
+            </div>
+    <table class="table is-bordered is-striped is-fullwidth" >
+        <thead>
+            <tr class="title is-6 ">
+                <th><abbr title="Name of currency">Currency</abbr></th>
+                <th><abbr title="Currency code symbol">Symbol</abbr></th>
+                <th><abbr title="Number of tokens held">Tokens</abbr></th>
+                <th><abbr title="Value per unit of currency">$value/unit</abbr></th>
+                <th><abbr title="Value of currency held">$total value</abbr></th>
+                <th><abbr title="Edit item">Edit</abbr></th>
+                <th><abbr title="remove item">remove</abbr></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="coin_id[n].name">name</th>
+                <td id="coin_id[n].symbol">symbol</td>
+                <td id="coin_id[n].amount">amount(dec)</td>
+                <td id="coin_id[n].unitVal">$/name</td>
+                <td id="coin_id[n].investVal">$total</td>
+                <td id="coin_id[n].edit"><span class="icon has-text-info"><i class="fa fa-pencil" aria-hidden="true"></span></i></td>
+                <td id="coin_id[n].remove"><span class="icon has-text-danger"><i class="fa fa-trash" aria-hidden="true"></span></i></td>    
+
+            </tr>
+        </tbody>
+        
+    </table>
+       
+</body>
+</html>
