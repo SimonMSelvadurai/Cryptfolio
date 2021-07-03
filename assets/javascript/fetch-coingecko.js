@@ -9,7 +9,7 @@ var pageQuery = '&page=1';
 var sparkLineQuery = '&sparkline=false';
 
 // test data 
-var coinHolding = [
+var XXXXXXcoinPortfolio = [
   {
     id : "bitcoin",
     quantity: 0.1 
@@ -32,20 +32,14 @@ var coinHolding = [
   }
 ];
 
-// util function to get api
-function getApi(url, callback, handleError) {
-  fetch(url).then(function (response) {
-    if (response.ok) {
-      response.json().then(callback);
-    } else {
-      handleError(response); 
-    }
-  }).catch((error) => {
-      console.error('Error:', error);
-  });
-};
 
 // generate a table of coin hold with values
+//  Arguments
+//   - coinHolding: Array of objects with properties {id, quantity}
+//  Note
+//   - Object must have properties "id" and "quantity" in order to execute properly 
+//   - The "id" is used to make an API call to CoinGecko. If it is misspell, the response will be null.
+ 
 function generateCoinPortfolio(coinHolding) {
   let queryUrl = generateQueryString(coinHolding);
   getApi(queryUrl, (data) => onReceiveMarketData(data, coinHolding), (response) => (console.log(response.status)));
@@ -61,24 +55,35 @@ function generateQueryString(coinHolding){
 
 // call when recieve market data 
 function onReceiveMarketData(data, coinHolding){
+  if (data.length !== coinHolding.length) {  // check for id error
+    logBadIds(data, coinHolding);
+  };
   let tableData = generateTableData(data, coinHolding)
   displayTableData(tableData);
 };
 
+// log bad ids for checking
+function logBadIds(data, coinHolding){
+  let responseIds = data.map((item) => (item.id));
+  let badIds = coinHolding.map((item) =>(item.id)).filter((item) => (!responseIds.includes(item)));
+  console.log('The following coin IDs do not exist in CoinGecko database:');
+  console.log(badIds);
+};
+
 // generate table data
 function generateTableData(data, coinHolding) {
-  return coinHolding.map((coin) => generateCoinData(data, coin));
+  return data.map((item) => generateCoinData(item, coinHolding));
 };
 
 // generate a row data
-function generateCoinData(data, coin) {
+function generateCoinData(item, coinHolding) {
   let result = {};
-  let coinData = data.filter((item) => (item.id === coin.id))[0];
-  result.id = coin.id;
-  result.quantity = coin.quantity;
-  result.name = coinData.name;
-  result.symbol = coinData.symbol;
-  result.price = coinData['current_price'];
+  let coinData = coinHolding.filter((coin) => (coin.id === item.id))[0];
+  result.id = item.id;
+  result.quantity = coinData.quantity;
+  result.name = item.name;
+  result.symbol = item.symbol;
+  result.price = item['current_price'];
   result.value = result.price * result.quantity;
   return result;
 };
@@ -91,5 +96,6 @@ function displayTableData(tableData){
 };
 //-------------------------------------
 
-generateCoinPortfolio(coinHolding);
+
+generateCoinPortfolio(XXXXXXcoinPortfolio);
 
