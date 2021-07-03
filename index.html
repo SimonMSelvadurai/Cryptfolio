@@ -2,30 +2,56 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8" />
-    <!-- Reset CSS stylesheet included to ensure best practices.-->
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    
-    <script src="./assets/javascript/api-util.js"></script>
-    <title>Code Quiz</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bulma CSS library -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	
+	<!-- Reset CSS stylesheet included to ensure best practices.-->
+	<link rel="stylesheet" href="./assets/css/reset.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	
+	<!-- scripts -->
+	<script src="./assets/javascript/components/table.js"></script>
+	<script src="./assets/javascript/api-util.js"></script>
+	<script src="./assets/javascript/table-generator.js"></script>
+
+	<!-- title -->
+	<title>Cryptfolio</title>
 </head>
 
 <body>
 
-    <header>
+	<header>
 
-    </header>
-    <main>
+	</header>
+	<main>
 
-        <script src="./assets/javascript/script.js"></script>
-        <!-- <script type="module" src="./assets/javascript/api-util.js"></script> -->
-        <script src="./assets/javascript/fetch-coingecko.js"></script>
-    </main>
-    <footer>
+		<div class="container">
+			<table id="coin-table" class="table is-striped is-fullwidth">
+				<thead>
+					<tr>
+						<th data-head="name">Coin</th>
+						<th data-head="symbol">Symbol</th>
+						<th data-head="quantity">Quantity</th>
+            <th data-head="price">Price</th>
+            <th data-head="value">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		
+
+		<script src="./assets/javascript/script.js"></script>
+		<script src="./assets/javascript/test.js"></script>
+	</main>
+	<footer>
 
 
-    </footer>
+	</footer>
 </body>
 
 </html>
