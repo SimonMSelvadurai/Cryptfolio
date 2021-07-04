@@ -15,6 +15,9 @@ const queryTemplate = {
       text: 'Coin Portfolio',
     },
     plugins: {
+      datalabels: {
+        display: false,
+      },
       doughnutlabel:{
         labels:[
           {
