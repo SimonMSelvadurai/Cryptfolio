@@ -50,14 +50,19 @@ function convertToString(obj) {
   if (typeof(obj) === "object" && Array.isArray(obj)) {
     let entries = obj.map((item) => (convertToString(item)));
     return '[' + entries.join(',') + ']'
-  } else if (typeof(obj) === 'object' ){ 
-    // is object
-    let entries = Object.entries(obj).map(([key, value]) => ( key + ':' + convertToString(value)))
-    return '{' + entries.join(',') + '}';
-  } else { 
-    // everything else
-    return JSON.stringify(obj).split('"').join("'");
   }
+  
+  // is object
+  if (typeof(obj) === 'object' ){ 
+    let entries = Object.entries(obj).map(([key, value]) => (key + ':' + convertToString(value)))
+    return '{' + entries.join(',') + '}';
+  } 
+
+  // is function
+  // ...
+
+  // everything else
+  return JSON.stringify(obj).split('"').join("'");
 };
 
 function goto(url) {
