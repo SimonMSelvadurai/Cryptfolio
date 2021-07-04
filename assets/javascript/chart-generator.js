@@ -1,33 +1,25 @@
 
-let data = {
-  type: 'doughnut', 
+const queryTemplate = {
+  type: 'doughnut',
   data: {
-    labels: [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May'
-    ], 
-    datasets:[
-      { 
-        data: [
-          50,
-          60,
-          70,
-          180,
-          190
-        ]
-      }
-    ]
+    datasets: [
+      {
+        data: [],
+      },
+    ],
+    labels: [],
   },
   options: {
-    plugins:{
+    title: {
+      display: true,
+      text: 'Coin Portfolio',
+    },
+    plugins: {
       doughnutlabel:{
         labels:[
           {
             text:'550',
-            font:{
+            font: {
               size:20
             }
           },
@@ -38,13 +30,28 @@ let data = {
       }
     }
   }
+}
+
+// deep clone an object - no reference will be create between the original and the new one
+function deepCloneObject(obj) {
+  return JSON.parse(JSON.stringify(obj));
 };
 
 
-function getChartQueryString(data){
-  return 'https://quickchart.io/chart?c=' + convertToString(data)
+// generate chart query string for Quick Chart 
+function getChartQueryString(coinProfolio){
+  let names = coinProfolio.map((coin) => (coin.name));
+  let values = coinProfolio.map((coin) => (coin.value));
+  let result = deepCloneObject(queryTemplate);   
+
+  result.data.datasets[0].data = values;
+  result.data.labels = names;
+  result.options.plugins.doughnutlabel.labels[0].text = values.reduce((sum, value) => (sum + parseFloat(value)), 0).toFixed(2);
+  return 'https://quickchart.io/chart?c=' + convertToString(result);
 }
 
+// convert object, array, function, and other to text of the format: (differ to JSON.stringify)
+//  {property:'value'}
 function convertToString(obj) {
   // is array
   if (typeof(obj) === "object" && Array.isArray(obj)) {
@@ -65,10 +72,10 @@ function convertToString(obj) {
   return JSON.stringify(obj).split('"').join("'");
 };
 
-function goto(url) {
-  document.location.href = url;
-}
-
-goto(getChartQueryString(data));
+// generate coin chart
+function generateCoinChart(coinProfolio){
+  let queryStr = getChartQueryString(coinProfolio);
+  displayChart(queryStr);
+};
 
 

@@ -35,6 +35,7 @@ function onReceiveMarketData(data, coinHolding, table){
   };
   let tableData = generateTableData(data, coinHolding)
   displayTableData(table, tableData);
+  generateCoinChart(tableData);
 };
 
 // log bad ids for checking
