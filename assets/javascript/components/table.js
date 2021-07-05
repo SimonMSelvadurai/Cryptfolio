@@ -25,6 +25,7 @@ function getHeads(tableEl){
 // append row into table body based on data and headers
 function appendTableRow(bodyEl, item, heads){
   let rowEl = document.createElement('tr');
+  rowEl.dataset.coin = item.id;
   heads.map((head) => appendTableCell(rowEl, item, head));
   bodyEl.appendChild(rowEl);
 };
@@ -37,13 +38,13 @@ function appendTableCell(rowEl, data, head) {
       <span class="icon has-text-info">
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </span>`;
-    cellEl.dataset.coin = data.id;
+    // cellEl.dataset.coin = data.id;
   } else if (head === "remove") {
     cellEl.innerHTML = `
       <span class="icon has-text-danger">
         <i class="fa fa-trash" aria-hidden="true"></i></span>
       </td>`;
-    cellEl.dataset.coin = data.id;
+    // cellEl.dataset.coin = data.id;
   } else {
     cellEl.textContent = data[head];
   }
