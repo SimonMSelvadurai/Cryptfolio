@@ -7,7 +7,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Rajdhani', sans-serif;
 }
 body {
   background-color: rgb(64, 120, 224);
@@ -28,13 +28,18 @@ body {
   display: flex;
 }
 
+.image {
+  
+}
+
 .image.is-128x128 {
   height: 87px;
   width: 128px;
 }
 h1 {
-  font-size: 30px;
+  font-family: 'Rajdhani', sans-serif;
 }
+
 .is-4by3 {
   padding: 15px;
   margin: 10px;
