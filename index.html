@@ -21,7 +21,7 @@
   <script src="./assets/javascript/api-util.js"></script>
   <script src="./assets/javascript/chart-generator.js"></script>
   <script src="./assets/javascript/table-generator.js"></script>
-  
+  <script src="./assets/javascript/available-coins.js"></script>
 
   <!-- title -->
   <title>Cryptfolio</title>
@@ -32,6 +32,12 @@
 
   </header>
   <main>
+
+    <form autocomplete="off">
+      
+      <input id="coin-search-input"  type="text" onkeyup="showResult(this.value)">
+      <div id="live-coin-search"></div>
+    </form>
 
     <div class="container">
       <table id="coin-table" class="table is-striped is-fullwidth">
@@ -59,6 +65,7 @@
 
     <script src="./assets/javascript/script.js"></script>
     <script src="./assets/javascript/test.js"></script>
+
 
   </main>
   <footer>
