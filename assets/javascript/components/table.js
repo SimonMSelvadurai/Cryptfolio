@@ -37,13 +37,13 @@ function appendTableCell(rowEl, data, head) {
       <span class="icon has-text-info">
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </span>`;
-    cellEl.dataset.coin = item.id;
+    cellEl.dataset.coin = data.id;
   } else if (head === "remove") {
     cellEl.innerHTML = `
       <span class="icon has-text-danger">
         <i class="fa fa-trash" aria-hidden="true"></i></span>
       </td>`;
-    cellEl.dataset.coin = item.id;
+    cellEl.dataset.coin = data.id;
   } else {
     cellEl.textContent = data[head];
   }
