@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/landing.css" />
+    <!--Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <!-- scripts -->
     <script src="./assets/javascript/components/table.js"></script>
@@ -19,37 +24,36 @@
 
     <!-- title -->
 
-
 </head>
 
 <body>
+    
     <div class="Navcontainer has-background-info-dark">
         <figure class="image is-128x128 media-left">
           <img src="assets/images/bitcoin-coin-money-electronic-money.jpg"
-                alt="styalised image of digital blockchain coin" />
-            
+                alt="styalised image of digital blockchain coin" /> 
         </figure>
 
         <h1 class="has-background-link-dark has-text-white-bis">
             Crypt My World
         </h1>
-
-        <figure class="image is-128x128 media-left">
-          <img src="assets/images/bitcoin-coin-money-electronic-money.jpg"
-          alt="styalised image of digital blockchain coin" />
-            
-        </figure>
+        <figure class="image is-128x128 media-right">
+            <img src="assets/images/bitcoin-coin-money-electronic-money.jpg"
+                  alt="styalised image of digital blockchain coin" /> 
+          </figure> 
     </div>
+
     <nav class="nav is-primary">
         <div class="nav-center">
             <a class="nav-item"> Home </a>
             <a class="nav-item"> Documentation </a>
             <a class="nav-item"> Blog </a>
+            <a href="https://www.coinbase.com/" class="button is-primary media-right">Buy and Sell cryptocurrency</a>
         </div>
     </nav>
 
     <div class="primarycontainer">
-        <div class="tile is-ancestor class=" tile is-child">
+        <div class="tile is-ancestor" class=" tile is-child">
             <div class="tile">
                 <div class="tile is-parent is-4">
                     <article class="tile is-child leftsidebar ">
@@ -60,13 +64,14 @@
                               The most popular and well-known versions are Bitcoin, and Etherium but there are thousands of different crypto in circulation. It has no physical form like paper money or coins. Owners keep it in a digital wallet and buy or sell through online exchange. 
                               Cryptocurrency can be used to buy regular goods and services but mostly they are used as investments and bought and sold like stocks or precious metals. It is a highly speculative investment, with the potential for intense price swings.
                             </p>
+                            <a href="https://www.cmcmarkets.com/en-au/learn-cryptocurrencies/what-are-cryptocurrencies" class="button is-primary">Find out more</a>
                             <figure class="image is-4by3">
                                 <img
                                     src="assets/images/bitcoin-business-money-currency-cryptocurrency-finance-royalty-free-thumbnail.jpg" />
                             </figure>
                             
                       
-                            <a class="button is-primary"> buy/sell criptocurrency </a>
+                            
                         </div>
                     </article>
                 </div>
@@ -122,7 +127,7 @@
                                 <!-- <div class="control has-icons-left has-icons-right"> -->
                                 <div class="control">
                                     <input class="input is-success" type="text" placeholder="Text input">
-                                    </ <span class="icon is-small is-left">
+                                    <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                     </span>
                                     <span class="icon is-small is-right">
@@ -142,13 +147,12 @@
                                 </div>
                             </div>
                             <div class="container">
-                                <table id="coin-table" class="table is-striped is-fullwidth">
-                                    <thead>
-                                        <tr class="title is-6 ">
+                                <table class="" id="coin-table" >
+                                    <thead> 
+                                        <tr class="title is-6">
                                             <th data-head="name"><abbr title="Name of currency">Currency</abbr></th>
                                             <th data-head="symbol"><abbr title="Currency code symbol">Symbol</abbr></th>
-                                            <th data-head="quantity"><abbr title="Number of tokens held">Tokens</abbr>
-                                            </th>
+                                            <th data-head="quantity"><abbr title="Number of tokens held">Tokens</abbr></th>
                                             <th data-head="price"><abbr title="Price per unit">Price</abbr></th>
                                             <th data-head="value"><abbr title="Value of currency held">Value</abbr></th>
                                             <th data-head="edit"><abbr title="Edit item">Edit</abbr></th>
@@ -175,7 +179,6 @@
                                 <!-- put chart here -->
                             </div>
 
-                            <a class="button is-primary goshop"> Go Shopping </a>
                             <!-- Content -->
                         </div>
                     </div>

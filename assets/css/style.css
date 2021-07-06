@@ -5,7 +5,7 @@
 }
 * {
   margin: 0px;
-  padding: 0px;
+  padding: 5px;
   box-sizing: border-box;
   font-family: 'Rajdhani', sans-serif;
 }
@@ -14,7 +14,6 @@ body {
 }
 .Navcontainer {
   display: flex;
-
   flex-direction: row;
   padding: 20px solid;
   justify-content: space-between;
@@ -32,8 +31,9 @@ body {
   height: 87px;
   width: 128px;
 }
+
 h1 {
-  font-family: 'Rajdhani', sans-serif;
+  font-size: 50px;
 }
 
 .is-4by3 {
@@ -56,3 +56,23 @@ h1 {
 .nav-item {
   color: white;
 }
+
+#coin-table {
+  
+}
+
+table, th, td {
+  border: 3px solid black;
+  padding: 5px;
+}
+th {
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    
+}
+
+thead tr {
+  background-color:hsl(29, 79%, 50%);
+}
+tbody tr:hover {background-color: #f5f5f5;}
