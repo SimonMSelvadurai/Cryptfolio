@@ -1,28 +1,27 @@
 let availableCoins = [];
 let coinInputEl = document.querySelector('#coin-input'); 
 
+// Initialise the dropdown form to fill with coin list once get from coingecko
 function initAvailbleCoins(){
   let queryStr = 'https://api.coingecko.com/api/v3/coins/list';
-  getApi(queryStr, updateAvailableCoins, (response) => (console.log(response)));
+  getApi(queryStr, onReceiveCoinList, (response) => (console.log(response)));
 
-
-  function updateAvailableCoins(data){
+  // to execute when receive a list of available coins from CoinGecko
+  function onReceiveCoinList(data){
     availableCoins = data;
     autocomplete(document.querySelector('#coin-input'), availableCoins);
+    document.addEventListener('click', closeAllLists);
   };
 };
 
 
-
-
 // create autocomplete based on coin list
-// TODO : add clicking functionality
 function autocomplete(inputEl, coinList) {
   let currentFocus;
   inputEl.addEventListener("input", handleTextChange);
   inputEl.addEventListener('keydown', handleKeyDown);
 
-  // handel when the text in input changes
+  // handle when the text in input changes
   function handleTextChange(event){
     let searchText = event.target.value;
 
@@ -49,8 +48,18 @@ function autocomplete(inputEl, coinList) {
     let result = document.createElement('div');
     result.classList = 'autocomplete-items';
     result.setAttribute("id", id + "-autocomplete-list");
+    result.addEventListener('click', handleCoinSelect)
     return result;
   };
+
+  // handling when an autocomplete item is select => fill in the input
+  function handleCoinSelect(event){
+    event.preventDefault();
+    let itemEl = event.target.closest('div');
+    let inputEl = itemEl.closest('.autocomplete').querySelector('input');
+    inputEl.value = itemEl.dataset.coin;
+    closeAllLists();
+  }
 
   // append autocomplete item to a container;
   function appendSuggestion(coin, inBold, appendTo){
