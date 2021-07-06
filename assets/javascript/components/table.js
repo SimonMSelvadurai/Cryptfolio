@@ -41,8 +41,9 @@ function appendTableCell(rowEl, data, head) {
   } else if (head === "remove") {
     cellEl.innerHTML = `
       <span class="icon has-text-danger">
-        <i class="fa fa-trash" aria-hidden="true"></i></span>
-      </td>`;
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </span>
+        `;
     cellEl.dataset.coin = data.id;
   } else {
     cellEl.textContent = data[head];
