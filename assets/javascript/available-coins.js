@@ -16,13 +16,15 @@ function initAvailbleCoins(){
 
 
 // create autocomplete based on coin list
+// TODO : add clicking functionality
 function autocomplete(inputEl, coinList) {
   let currentFocus;
   inputEl.addEventListener("input", handleTextChange);
   inputEl.addEventListener('keydown', handleKeyDown);
 
+  // handel when the text in input changes
   function handleTextChange(event){
-    let searchText = this.value;
+    let searchText = event.target.value;
 
     // close any already open lists of autocompleted values
     closeAllLists();
@@ -30,7 +32,7 @@ function autocomplete(inputEl, coinList) {
     currentFocus = -1;
 
     // non-empty string
-    let newContainerEl = createAutocompleteListContainer(this.id);
+    let newContainerEl = createAutocompleteListContainer(event.target.id);
 
     coinList.filter( 
       // matching starting text and get the top 5 entries
