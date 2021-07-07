@@ -14,7 +14,6 @@ function initAvailbleCoins(){
   };
 };
 
-
 // create autocomplete based on coin list
 function autocomplete(inputEl, coinList) {
   let currentFocus;
@@ -122,4 +121,3 @@ function closeAllLists() {
 };
 
 initAvailbleCoins();
-

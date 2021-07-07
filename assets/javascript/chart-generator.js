@@ -50,7 +50,9 @@ function getChartQueryString(coinProfolio){
   result.data.datasets[0].data = values;
   result.data.labels = names;
   result.options.plugins.doughnutlabel.labels[0].text = values.reduce((sum, value) => (sum + parseFloat(value)), 0).toFixed(2);
-  return 'https://quickchart.io/chart?c=' + convertToString(result);
+  result = 'https://quickchart.io/chart?c=' + convertToString(result);
+  result += '&w=300&h=500';
+  return result;
 }
 
 // convert object, array, function, and other to text of the format: (differ to JSON.stringify)
