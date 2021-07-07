@@ -1,10 +1,4 @@
-var coinPortfolio = [
-];
-
-
-
-
-//
+var coinPortfolio = [];
 
 // init page
 function initPage(){
