@@ -1,5 +1,4 @@
 let availableCoins = [];
-let coinInputEl = document.querySelector('#coin-input'); 
 
 // Initialise the dropdown form to fill with coin list once get from coingecko
 function initAvailbleCoins(){
@@ -7,10 +6,14 @@ function initAvailbleCoins(){
   getApi(queryStr, onReceiveCoinList, (response) => (console.log(response)));
 
   // to execute when receive a list of available coins from CoinGecko
-  function onReceiveCoinList(data){
+  function onReceiveCoinList(data){ 
+    let formEl = document.querySelector('#coin-holding-form');
+    let coinInputEl = document.querySelector('#coin-input'); 
+
     availableCoins = data;
-    autocomplete(document.querySelector('#coin-input'), availableCoins);
+    autocomplete(coinInputEl, availableCoins);
     document.addEventListener('click', closeAllLists);
+    connectHandleSubmitForm(formEl, availableCoins, coinPortfolio);
   };
 };
 
@@ -119,5 +122,3 @@ function closeAllLists() {
     node.remove();
   };
 };
-
-initAvailbleCoins();
