@@ -24,7 +24,4 @@ var coinPortfolio = [
 
 
 let tableEl = document.querySelector('#coin-table')
-console.log('first table generation');
-generateCoinTable(coinPortfolio, tableEl);
-console.log('second table generation');
 generateCoinTable(coinPortfolio, tableEl);
