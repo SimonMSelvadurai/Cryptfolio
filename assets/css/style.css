@@ -125,3 +125,8 @@ strong {
   padding-left: 0px;
   padding-right: 0px;
 }
+
+/* PADDING UTILS */
+.pr-1 {
+  padding-right: 1rem;
+}
