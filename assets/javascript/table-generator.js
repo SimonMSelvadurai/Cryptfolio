@@ -8,6 +8,7 @@
 //     will be null.
  
 function generateCoinTable(coinHolding, table) {
+  if (coinHolding.length === 0) return;
   let queryUrl = generateCoinDataQueryString(coinHolding);
   getApi(queryUrl, (data) => onReceiveMarketData(data, coinHolding, table), (response) => (console.log(response.status)));
 }

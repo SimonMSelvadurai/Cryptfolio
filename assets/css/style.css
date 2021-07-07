@@ -108,6 +108,10 @@ form {
   padding-bottom: 1rem;
 }
 
+.btn {
+  font-family: 'Rajdhani', sans-serif;
+}
+
 .autocomplete {
   /*the container must be positioned relative:*/
   position: relative;
@@ -144,17 +148,4 @@ strong {
   font-weight: 900;
   padding-left: 0px;
   padding-right: 0px;
-}
-
-/* PADDING UTILS */
-.pr-1 {
-  padding-right: 1rem;
-}
-
-
-/* When the browser is at least 600px and above */
-@media screen and (max-width: 1150px) {
-  #middle-tile {
-    width: 50%
-  }
 }

@@ -23,6 +23,8 @@
   <script src="./assets/javascript/chart-generator.js"></script>
   <script src="./assets/javascript/table-generator.js"></script>
   <script src="./assets/javascript/available-coins.js"></script>
+  <script src="./assets/javascript/submit-form.js"></script>
+  <script src="./assets/javascript/coin-portfolio.js"></script>
 </head>
 
 <body>
@@ -98,9 +100,8 @@
             <div class="content">
 
               <!-- Form -->
-              <form id="coin-holding-form">
-                <p class="title">Form</p>
-                <p class="subtitle">With even more content</p>
+              <form id="coin-holding-form" autocomplete="off">
+                <p class="title">Enter Your Coin Holding</p>
                 
                 <!-- coin name input -->
                 <div class="field is-horizontal">
@@ -110,9 +111,16 @@
                   <div class="field-body">
                     <div class="field">
                       <div class="control is-expanded autocomplete">
-                        <input id="coin-input" class="input is-success" type="text" placeholder="Text input">
-                            <!-- Can't place anything here -->
+                        <input 
+                          id="coin-input" 
+                          name="coin-name"
+                          class="input is-success" 
+                          type="text" 
+                          placeholder="Name of cryptocurrency" 
+                          data-input-type="text">
+                          <!-- Can't place anything here -->
                       </div>
+                      <p class="help is-danger"></p>
                     </div>
                   </div>
                 </div>
@@ -125,7 +133,12 @@
                   <div class="field-body">
                     <div class="field">
                       <div class="control is-expanded">
-                        <input class="input is-success" type="text" placeholder="Text input">
+                        <input 
+                          name="coin-quantity"
+                          class="input is-success" 
+                          type="text" 
+                          placeholder="Amount of cryptocurrency" 
+                          data-input-type="number">
                       </div>
                       <p class="help is-danger"></p>
                     </div>
@@ -139,10 +152,10 @@
                   </div>
                   <div class="field-body">
                     <div class="control pr-4">
-                      <button class="button is-link">Submit</button>
+                      <button class="button is-link btn">Submit</button>
                     </div>
                     <div class="control">
-                      <button class="button is-link is-light">Cancel</button>
+                      <div id="clear-form-button" class="button is-link is-light btn">Clear</div>
                     </div>
                     
                   </div>
