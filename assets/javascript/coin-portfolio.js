@@ -23,7 +23,7 @@ function updateCoinPortfolio(coinPortfolio, coinData){
   coinPortfolio.push(coinData);
 };
 
-// update coin portfolic with new coinGecko market data
+// update coin portfolio with new coinGecko market data
 function updateCoinPortfolioWithMarketData(coinGeckoData, coinHolding) {
   coinHolding.map((coin) => (updateCoinWithMarketData(coinGeckoData, coin)));
 
