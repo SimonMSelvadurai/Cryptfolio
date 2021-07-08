@@ -9,10 +9,6 @@ const queryTemplate = {
     labels: [],
   },
   options: {
-    // title: {
-    //   display: fa,
-    //   text: 'Coin Portfolio',
-    // },
     plugins: {
       datalabels: {
         display: false,
@@ -50,7 +46,7 @@ function getChartQueryString(coinProfolio){
   result.data.labels = names;
   result.options.plugins.doughnutlabel.labels[0].text = values.reduce((sum, value) => (sum + parseFloat(value)), 0).toFixed(2);
   result = 'https://quickchart.io/chart?c=' + convertToString(result);
-  result += '&w=500&h=300';
+  result += '&w=500&h=300&v=3.1';
   return result;
 }
 
