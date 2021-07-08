@@ -70,7 +70,7 @@
               </p>
               <a href="https://www.cmcmarkets.com/en-au/learn-cryptocurrencies/what-are-cryptocurrencies" class="button is-primary">Find out more</a>
               <figure class="image is-4by3">
-                <img class="display-none-mobile""
+                <img 
                     src="assets/images/bitcoin-business-money-currency-cryptocurrency-finance-royalty-free-thumbnail.jpg" />
               </figure>
             </div>
@@ -78,75 +78,89 @@
         </div>
 
         <!-- center  -->
-        <div class="tile is-parent is-6">
+        <div class="tile is-parent is-9">
           <article class="tile is-child centercontent">
             <div class="content">
 
-              <!-- Form -->
-              <form id="coin-holding-form" autocomplete="off">
-                <p class="title">Enter Your Coin Holding</p>
-                
-                <!-- coin name input -->
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">Name</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control is-expanded autocomplete">
-                        <input 
-                          id="coin-input" 
-                          name="coin-name"
-                          class="input is-success" 
-                          type="text" 
-                          placeholder="Name of cryptocurrency" 
-                          data-input-type="text"
-                          autocomplete="off">
-                          <!-- Can't place anything here -->
+              <!-- form and graphs -->
+              <div class="columns">
+
+                <!-- Form -->
+                <div class="column is-half">
+                  <form id="coin-holding-form" autocomplete="off">
+                    <h3 class="title">Enter Your Coin Holding</h3>
+                    
+                    <!-- coin name input -->
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Name</label>
                       </div>
-                      <p class="help is-danger"></p>
-                    </div>
-                  </div>
-                </div>
-                  
-                <!-- amount input -->
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">Amount</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control is-expanded">
-                        <input 
-                          name="coin-quantity"
-                          class="input is-success" 
-                          type="text" 
-                          placeholder="Amount of cryptocurrency" 
-                          data-input-type="number">
-                      </div>
-                      <p class="help is-danger"></p>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- submit and clear button -->
-                <div class="field is-horizontal">
-                  <div class="field-label">
-                    <!-- Left empty for spacing -->
-                  </div>
-                  <div class="field-body">
-                    <div class="field is-grouped">
-                      <div class="control">
-                        <button class="button is-link btn">Submit</button>
-                      </div>
-                      <div class="control">
-                        <div id="clear-form-button" class="button is-link is-light btn">Clear</div>
+                      <div class="field-body">
+                        <div class="field">
+                          <div class="control is-expanded autocomplete">
+                            <input 
+                              id="coin-input" 
+                              name="coin-name"
+                              class="input is-success" 
+                              type="text" 
+                              placeholder="Name of cryptocurrency" 
+                              data-input-type="text"
+                              autocomplete="off">
+                              <!-- Can't place anything here -->
+                          </div>
+                          <p class="help is-danger"></p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                      
+                    <!-- amount input -->
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Amount</label>
+                      </div>
+                      <div class="field-body">
+                        <div class="field">
+                          <div class="control is-expanded">
+                            <input 
+                              name="coin-quantity"
+                              class="input is-success" 
+                              type="text" 
+                              placeholder="Amount of cryptocurrency" 
+                              data-input-type="number">
+                          </div>
+                          <p class="help is-danger"></p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- submit and clear button -->
+                    <div class="field is-horizontal">
+                      <div class="field-label">
+                        <!-- Left empty for spacing -->
+                      </div>
+                      <div class="field-body">
+                        <div class="field is-grouped">
+                          <div class="control">
+                            <button class="button is-link btn">Submit</button>
+                          </div>
+                          <div class="control">
+                            <div id="clear-form-button" class="button is-link is-light btn">Clear</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-              </form>
-                
+
+                <!-- Chart -->
+                <div class="column is-half">
+                  <!-- <h3 class="title">Graphs</h3> -->
+                  <div class="" id="chart-container">
+                    <!-- put chart here -->
+                </div>
+                </div>
+              </div>
+
               <!-- table -->
               <div class="container">
                 <table class="" id="coin-table" >
@@ -170,18 +184,18 @@
         </div>
 
         <!-- right side bar -->
-        <div class="tile is-parent is-3">
+        <!-- <div class="tile is-parent is-3">
           <article class="tile is-child rightsidebar">
             <div class="content">
               <p class="title">Graphs</p>
               <div class="content">
-                <div class="" id="chart-container">
+                <div class="" id="chart-container"> -->
                     <!-- put chart here -->
-                </div>
+                <!-- </div>
               </div>
             </div>
           </article>
-        </div>
+        </div> -->
       </div>
     </div>
   </main>
