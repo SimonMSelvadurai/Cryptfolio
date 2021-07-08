@@ -41,12 +41,9 @@ function displayTableData(tableEl, tableData){
   // append cell to a row based on the data and header
   function appendTableCell(rowEl, data, head) {
     let cellEl = document.createElement('td');
-    if (head === "edit" ){
-      cellEl.innerHTML = `
-        <span class="icon has-text-info">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-        </span>`;
-    } else if (head === "remove") {
+    
+    // for remove button
+    if (head === "remove") {
       cellEl.innerHTML = `
         <span class="icon has-text-danger">
           <i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -54,6 +51,11 @@ function displayTableData(tableEl, tableData){
     } else {
       cellEl.textContent = data[head];
     }
+
+    // add class for them to disappear in mobile
+    if (['price','remove'].includes(head)){
+      cellEl.classList.add('display-none-mobile');
+    };
     rowEl.appendChild(cellEl);
   };
 };

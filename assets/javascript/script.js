@@ -10,4 +10,4 @@ function initPage(){
   connectHandleClearForm(clearFormBtn);
 }
 
-initPage();
+initPage()

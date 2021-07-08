@@ -22,3 +22,18 @@ function updateCoinPortfolio(coinPortfolio, coinData){
   }; 
   coinPortfolio.push(coinData);
 };
+
+// update coin portfolic with new coinGecko market data
+function updateCoinPortfolioWithMarketData(coinGeckoData, coinHolding) {
+  coinHolding.map((coin) => (updateCoinWithMarketData(coinGeckoData, coin)));
+
+  // update individual coin with new new coinGecko market data
+  function updateCoinWithMarketData(coinGeckoData, coin) {
+    let coinData = coinGeckoData.filter((item) => (item.id === coin.id))[0];
+    coin.name = coinData.name;
+    coin.symbol = coinData.symbol.toUpperCase();
+    coin.price = coinData['current_price'];
+    coin.value = (coin.price * coin.quantity).toFixed(2);
+  };
+};
+
