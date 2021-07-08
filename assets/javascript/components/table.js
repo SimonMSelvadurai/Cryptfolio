@@ -53,9 +53,13 @@ function displayTableData(tableEl, tableData){
     }
 
     // add class for them to disappear in mobile
-    if (['price','remove'].includes(head)){
-      cellEl.classList.add('display-none-mobile');
-    };
+    if (['remove'].includes(head)) cellEl.classList.add('is-hidden-touch');
+    if (['price'].includes(head)) cellEl.classList.add('is-hidden-mobile');
+
+    // text alignment
+    if (['symbol', 'remove'].includes(head)) cellEl.classList.add('has-text-centered');
+    if (['quantity', 'price', 'value'].includes(head)) cellEl.classList.add('has-text-right');
+
     rowEl.appendChild(cellEl);
   };
 };
