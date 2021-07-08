@@ -9,12 +9,15 @@ function handleSubmitForm(event, coinList, coinPortfolio){
   if (inputs.name === null || inputs.quantity === null) return;
   
   inputs.id = getCoinId(inputs.name, coinList);
-  updateCoinPortfolio(coinPortfolio, inputs);
-  saveCoinPortfolio(coinPortfolio);
+  if (inputs.id){
+    updateCoinPortfolio(coinPortfolio, inputs);
+    saveCoinPortfolio(coinPortfolio);
   
-  let tableEl = document.querySelector('#coin-table');
-  generateCoinTable(coinPortfolio, tableEl);
-  clearForm(formEl);
+    let tableEl = document.querySelector('#coin-table');
+    generateCoinTable(coinPortfolio, tableEl);
+    clearForm(formEl);
+  };
+  
 
   // get form inputs
   function getFormInputs() {
@@ -50,7 +53,7 @@ function handleSubmitForm(event, coinList, coinPortfolio){
   // get coin id from coin list
   function getCoinId(coinName, coinList){
     let coinData = coinList.filter((coin) => (coin.name === coinName))[0];
-    return coinData.id;
+    return coinData ? coinData.id : null;
   };
 
   // show warning

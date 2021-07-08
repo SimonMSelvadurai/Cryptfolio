@@ -33,10 +33,12 @@ function generateCoinDataQueryString(coinHolding){
 function onReceiveMarketData(data, coinHolding, table){
   if (data.length !== coinHolding.length) {  // check for id error
     logBadIds(data, coinHolding);
+    return;
   };
-  let tableData = generateTableData(data, coinHolding)
-  displayTableData(table, tableData);
-  generateCoinChart(tableData);
+  // let tableData = generateTableData(data, coinHolding);
+  updateCoinPortfolioWithMarketData(data, coinHolding);
+  displayTableData(table, coinHolding);
+  generateCoinChart(coinHolding);
 };
 
 // log bad ids for checking
@@ -47,20 +49,33 @@ function logBadIds(data, coinHolding){
   console.log(badIds);
 };
 
-// generate table data
-function generateTableData(data, coinHolding) {
-  return data.map((item) => generateCoinData(item, coinHolding));
+// // generate table data
+// function generateTableData(data, coinHolding) {
+//   return data.map((item) => generateCoinData(item, coinHolding));
+// };
+
+// // generate a row data
+// function generateCoinData(item, coinHolding) {
+//   let result = {};
+//   let coinData = coinHolding.filter((coin) => (coin.id === item.id))[0];
+//   result.id = item.id;
+//   result.quantity = coinData.quantity;
+//   result.name = item.name;
+//   result.symbol = item.symbol.toUpperCase();
+//   result.price = item['current_price'];
+//   result.value = (result.price * result.quantity).toFixed(2);
+//   return result;
+// };
+
+function updateCoinPortfolioWithMarketData(data, coinHolding) {
+  coinHolding.map((coin) => (updateCoinWithMarketData(data, coin)));
 };
 
-// generate a row data
-function generateCoinData(item, coinHolding) {
-  let result = {};
-  let coinData = coinHolding.filter((coin) => (coin.id === item.id))[0];
-  result.id = item.id;
-  result.quantity = coinData.quantity;
-  result.name = item.name;
-  result.symbol = item.symbol.toUpperCase();
-  result.price = item['current_price'];
-  result.value = (result.price * result.quantity).toFixed(2);
-  return result;
+function updateCoinWithMarketData(data,coin) {
+  let coinData = data.filter((item) => (item.id === coin.id))[0];
+  coin.name = coinData.name;
+  coin.symbol = coinData.symbol.toUpperCase();
+  coin.price = coinData['current_price'];
+  coin.value = (coin.price * coin.quantity).toFixed(2);
+  console.log(coin);
 };
