@@ -121,7 +121,8 @@
                           class="input is-success" 
                           type="text" 
                           placeholder="Name of cryptocurrency" 
-                          data-input-type="text">
+                          data-input-type="text"
+                          autocomplete="off">
                           <!-- Can't place anything here -->
                       </div>
                       <p class="help is-danger"></p>
@@ -129,7 +130,7 @@
                   </div>
                 </div>
                   
-                  <!-- amount input -->
+                <!-- amount input -->
                 <div class="field is-horizontal">
                   <div class="field-label is-normal">
                     <label class="label">Amount</label>
@@ -155,11 +156,13 @@
                     <!-- Left empty for spacing -->
                   </div>
                   <div class="field-body">
-                    <div class="control pr-4">
-                      <button class="button is-link btn">Submit</button>
-                    </div>
-                    <div class="control">
-                      <div id="clear-form-button" class="button is-link is-light btn">Clear</div>
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <button class="button is-link btn">Submit</button>
+                      </div>
+                      <div class="control">
+                        <div id="clear-form-button" class="button is-link is-light btn">Clear</div>
+                      </div>
                     </div>
                   </div>
                 </div>
