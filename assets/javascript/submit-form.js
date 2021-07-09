@@ -3,20 +3,25 @@
 function handleSubmitForm(event, coinList, coinPortfolio){
   event.preventDefault();
   let formEl = event.target;
+  let coinInputEl = formEl.querySelector('#coin-input');
   clearAllWarnings(formEl);
 
   let inputs = getFormInputs();
-  if (inputs.name === null || inputs.quantity === null) return;
+  if (inputs.name === null || inputs.quantity === null) return; // empty entries
   
   inputs.id = getCoinId(inputs.name, coinList);
-  if (inputs.id){
-    updateCoinPortfolio(coinPortfolio, inputs);
-    saveCoinPortfolio(coinPortfolio);
-  
-    let tableEl = document.querySelector('#coin-table');
-    generateCoinTable(coinPortfolio, tableEl);
-    clearForm(formEl);
+  if (inputs.id === null){ // if the input is not in our database
+    showWarning(coinInputEl,'This coin does not exist in our database!');
+    return;
   };
+
+  updateCoinPortfolio(coinPortfolio, inputs);
+  saveCoinPortfolio(coinPortfolio);
+
+  let tableEl = document.querySelector('#coin-table');
+  generateCoinTable(coinPortfolio, tableEl);
+  clearForm(formEl);
+  
   
 
   // get form inputs
