@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 :root {
   --main-radius: 5px;
-  
 }
 
 * {
@@ -12,25 +11,31 @@ body {
   background-color: rgb(64, 120, 224);
 }
 
-.Navcontainer {
+.content {
+  padding: 5px;
+}
+
+/* ---- Header ---- */
+.nav-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.container {
-  display: flex;
-}
-
 #heading-container {
   display: flex;
   width: 100%;
-  justify-content: centred;
+  justify-content: center;
+  align-items: center;
   border: 2px solid black;
-  border-radius: 10px;
-  padding: 1% 10% 1% 30%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   background-color: black;
-  margin-bottom: 1%;
+}
+
+#heading-container h1 {
+  margin: 0px;
+  padding: 0.75rem;
 }
 
 #header-img-left {
@@ -43,42 +48,28 @@ body {
   width: 180px;
 }
 
-h1 {
-  display:inline-block;
-  padding-top: 5%;
-}
-
-.content {
-    padding: 5px;
-}
-
-/* #buy-sell-btn {
-  display: inline-block;
-  margin-left: 7%; 
-} */
-
-table {
-  margin: 0 auto;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.is-parent {
-  padding: 5px;
-}
-
+/* ---- Containers ---- */
 .leftsidebar,
 .rightsidebar,
 .centercontent {
   background-color: white;
   border: 2px solid black;
-  padding: 1rem;
+  padding: 0.5rem;
 }
-.primarycontainer {
-  margin: 10px 20px 10px 30px;
+
+.primary-container {
+  padding: 0.75rem;
 }
-.nav-item {
-  color: white;
+
+.container {
+  display: flex;
+}
+
+/* ---- Table ----  */
+table {
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 table, th, td {
@@ -96,8 +87,7 @@ thead tr {
 
 tbody tr:hover {background-color: #f5f5f5;}
 
-
-/* Autocomplete form */
+/* ---- Autocomplete Form ---- */
 form {
   padding-bottom: 1rem;
 }
@@ -139,7 +129,7 @@ form {
   color: #ffffff;
 }
 
-/* UTILS */
+/* ---- UTILS ---- */
 strong {
   font-weight: 900;
   padding-left: 0px;
@@ -148,4 +138,8 @@ strong {
 
 .full-vh {
   min-height: 100vh;
+}
+
+.is-parent-custom {
+  padding: 0.5rem;
 }
