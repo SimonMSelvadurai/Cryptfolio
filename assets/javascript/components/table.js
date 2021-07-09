@@ -48,6 +48,7 @@ function displayTableData(tableEl, tableData){
         <span class="icon has-text-danger">
           <i class="fa fa-trash" aria-hidden="true"></i></span>
         </td>`;
+      cellEl.addEventListener('click', handleRemoveCoin);
     } else {
       cellEl.textContent = data[head];
     }
@@ -61,6 +62,19 @@ function displayTableData(tableEl, tableData){
     if (['quantity', 'price', 'value'].includes(head)) cellEl.classList.add('has-text-right');
 
     rowEl.appendChild(cellEl);
+  };
+
+
+  // handle when the remove coin is clicked
+  function handleRemoveCoin(event){
+    event.preventDefault();
+    let rowEl =  event.target.closest('tr');
+    let coinId = rowEl.dataset.coin;
+
+    // rowEl.remove();
+    removeCoin(coinPortfolio, coinId);
+    saveCoinPortfolio(coinPortfolio);
+    displayTableData(document.querySelector('#coin-table'), coinPortfolio)
   };
 };
 

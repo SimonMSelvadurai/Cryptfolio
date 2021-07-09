@@ -10,16 +10,13 @@ function getSavedCoinPortfolio() {
 };
 
 // save coin portfolio to local storage
-function saveCoinPortfolio(protfolio) {
-  localStorage.setItem('coinPortfolio', JSON.stringify(protfolio)); 
+function saveCoinPortfolio(portfolio) {
+  localStorage.setItem('coinPortfolio', JSON.stringify(portfolio)); 
 };
 
 // update coin portfolio 
 function updateCoinPortfolio(coinPortfolio, coinData){
-  let ids = coinPortfolio.map((coin) => (coin.id));
-  if (ids.includes(coinData.id)){
-    coinPortfolio.splice(ids.indexOf(coinData.id),1);
-  }; 
+  removeCoin(coinPortfolio, coinData.id);
   coinPortfolio.push(coinData);
 };
 
@@ -37,3 +34,10 @@ function updateCoinPortfolioWithMarketData(coinGeckoData, coinHolding) {
   };
 };
 
+// remove a coin from coin portfolio 
+function removeCoin(coinPortfolio, id){
+  let ids = coinPortfolio.map((coin) => (coin.id));
+  if (ids.includes(id)){ // check if id is in the portfolio
+    coinPortfolio.splice(ids.indexOf(id),1);
+  }; 
+};
