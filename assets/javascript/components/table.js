@@ -71,10 +71,11 @@ function displayTableData(tableEl, tableData){
     let rowEl =  event.target.closest('tr');
     let coinId = rowEl.dataset.coin;
 
-    // rowEl.remove();
+    rowEl.remove();
     removeCoin(coinPortfolio, coinId);
     saveCoinPortfolio(coinPortfolio);
-    displayTableData(document.querySelector('#coin-table'), coinPortfolio)
+    // displayTableData(document.querySelector('#coin-table'), coinPortfolio);
+    generateCoinChart(coinPortfolio);
   };
 };
 

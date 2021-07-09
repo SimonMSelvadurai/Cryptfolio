@@ -37,9 +37,9 @@ function deepCloneObject(obj) {
 
 
 // generate chart query string for Quick Chart 
-function getChartQueryString(coinProfolio){
-  let names = coinProfolio.map((coin) => (coin.name));
-  let values = coinProfolio.map((coin) => (coin.value));
+function getChartQueryString(coinPortfolio){
+  let names = coinPortfolio.map((coin) => (coin.name));
+  let values = coinPortfolio.map((coin) => (coin.value));
   let result = deepCloneObject(queryTemplate);   
 
   result.data.datasets[0].data = values;
@@ -73,8 +73,9 @@ function convertToString(obj) {
 };
 
 // generate coin chart
-function generateCoinChart(coinProfolio){
-  let queryStr = getChartQueryString(coinProfolio);
+function generateCoinChart(coinPortfolio){
+  console.log('generating chart....');
+  let queryStr = getChartQueryString(coinPortfolio);
   displayChart(queryStr);
 };
 
