@@ -17,15 +17,14 @@
 
 ## <h2 style="text-align:center" id="purpose">Purpose</h2>
 
-This is a multi page web app with multiple server side APIS.
+This web app uses multiple server APIs as well as browser APIs to generate data and add functionality. It also utilises the Bulma CSS framework for styling and design.
 
-We built this website as a way to practice our API requests and use skills, our teamwork skills. As well as our Git skills.
+This was a group exercise to develop and practice our skills in user-side web page design using HTML, Bulma CSS framework, CSS styling, javascript and API requests. 
 
-It was a way for me to design, code and deploy a single page application whilst reinforcing the basic skill set of any Full Stack programmer.
+Teamwork skills were a focus of the project using Github as a platform for multiuser development as well as project planning and execution.
 
-The site can be used as an example of basic javascript. Including functions, if statements, variables and more. 
+This app is intended as a simple, single-page UI that allows a user to build a cryptocurrency portfolio for personal use. The app will generate current values for the stored cryptocurrency types in the users portfolio. The users portfolio will also be displayed as a graph that shows the relative values of each item within the portfolio as a whole.
 
-As a result of this work I have learnt and refined the basics for website design using javascript.
 
 ## <h2 style="text-align:center" id="features">Features</h2>
 This site has been created keeping accessability standards in mind.
