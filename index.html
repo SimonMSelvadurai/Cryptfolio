@@ -2,28 +2,185 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8" />
-    <!-- Reset CSS stylesheet included to ensure best practices.-->
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- title -->
+  <title>Welcome to Crypt World!!!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
+  <!--Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Code Quiz</title>
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="./assets/javascript/components/table.js"></script>
+  <script src="./assets/javascript/components/chart.js"></script>
+  <script src="./assets/javascript/api-util.js"></script>
+  <script src="./assets/javascript/chart-generator.js"></script>
+  <script src="./assets/javascript/table-generator.js"></script>
+  <script src="./assets/javascript/available-coins.js"></script>
+  <script src="./assets/javascript/submit-form.js"></script>
+  <script src="./assets/javascript/coin-portfolio.js"></script>
+  
 </head>
 
 <body>
+  <header>
+    <div class="nav-container has-background-is-info is-dark">
+      <div id="heading-container" class="" >
+        <figure class="image is-128x128 is-hidden-mobile" id="header-img-left">
+          <img src="assets/images/bitcoin-coin-money-electronic-money.jpg"
+            alt="styalised image of digital blockchain coin" /> 
+        </figure>
 
-    <header>
+        <h1 class="title is-2 has-text-white-bis is-size-3-mobile">Crypt My World</h1>
+        
+        <figure class="image is-128x128 is-hidden-mobile"  id="header-img-right">
+          <img src="assets/images/bitcoin-coin-money-electronic-money.jpg"
+            alt="styalised image of digital blockchain coin" /> 
+        </figure>
+      </div> 
+    </div>  
+  </header>  
+  
+  
+  <main class="full-vh">
+    <div class="primary-container">
+      <div class="tile is-ancestor">
+        <!-- left side bar -->
+        <div class="tile is-inline is-desktop is-3 is-hidden-mobile is-parent-custom">
+            <article class="tile is-child leftsidebar">
+              <div class="content">
+                <h3 class="title">Article</h3>
+                <p>
+                  Cryptocurrency is virtual money that is secured by cryptography.  There are no central authorities like banks or governments that manage and maintain its value. It is a form of digital asset that is distributed across large networks of computers. Transactions are recorded in blocks that are linked together in a chain of previous transactions, called blockchain.
+                  The most popular and well-known versions are Bitcoin, and Etherium but there are thousands of different crypto in circulation. It has no physical form like paper money or coins. Owners keep it in a digital wallet and buy or sell through online exchange. 
+                  Cryptocurrency can be used to buy regular goods and services but mostly they are used as investments and bought and sold like stocks or precious metals. It is a highly speculative investment, with the potential for intense price swings.
+              </p>
+              <a href="https://www.cmcmarkets.com/en-au/learn-cryptocurrencies/what-are-cryptocurrencies" class="button is-dark">Find out more</a>
+            </div>
+          </article>
+        </div>
 
-    </header>
-    <main>
+        <!-- center  -->
+        <div class="tile is-9 is-parent-custom">
+          <article class="tile is-child centercontent">
+            <div class="content">
 
-        <script src="assets/javascript/script.js"></script>
-    </main>
-    <footer>
+              <!-- form and graphs -->
+              <div class="columns">
 
+                <!-- Form -->
+                <div class="column is-half">
+                  <form id="coin-holding-form" autocomplete="off">
+                    <h3 class="title">Enter Your Coin Holding</h3>
+                    
+                    <!-- coin name input -->
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Name</label>
+                      </div>
+                      <div class="field-body">
+                        <div class="field">
+                          <div class="control is-expanded autocomplete">
+                            <input 
+                              id="coin-input" 
+                              name="coin-name"
+                              class="input is-success" 
+                              type="text" 
+                              placeholder="Name of cryptocurrency" 
+                              data-input-type="text"
+                              autocomplete="off">
+                              <!-- Can't place anything here -->
+                          </div>
+                          <p class="help is-danger"></p>
+                        </div>
+                      </div>
+                    </div>
+                      
+                    <!-- amount input -->
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Amount</label>
+                      </div>
+                      <div class="field-body">
+                        <div class="field">
+                          <div class="control is-expanded">
+                            <input 
+                              name="coin-quantity"
+                              class="input is-success" 
+                              type="text" 
+                              placeholder="Amount of cryptocurrency" 
+                              data-input-type="number">
+                          </div>
+                          <p class="help is-danger"></p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- submit and clear button -->
+                    <div class="field is-horizontal">
+                      <div class="field-label">
+                        <!-- Left empty for spacing -->
+                      </div>
+                      <div class="field-body">
+                        <div class="field is-grouped">
+                          <div class="control">
+                            <button class="button is-link btn">Submit</button>
+                          </div>
+                          <div class="control">
+                            <div id="clear-form-button" class="button is-link is-light btn">Clear</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
 
-    </footer>
+                <!-- Chart -->
+                <div class="column is-half">
+                  <!-- <h3 class="title">Graphs</h3> -->
+                  <div class="" id="chart-container">
+                    <!-- put chart here -->
+                </div>
+                </div>
+              </div>
+
+              <!-- table -->
+              <div class="container">
+                <table class="" id="coin-table" >
+                  <thead class="is-hidden-mobile"> 
+                    <tr class="title is-5">
+                      <th data-head="name"><abbr title="Name of currency">Currency</abbr></th>
+                      <th data-head="symbol"   class="has-text-centered"><abbr title="Currency code symbol">Symbol</abbr></th>
+                      <th data-head="quantity" class="has-text-centered"><abbr title="Number of tokens held">Tokens</abbr></th>
+                      <th data-head="price"    class="has-text-centered" ><abbr title="Price per unit">Price</abbr></th>
+                      <th data-head="value"    class="has-text-centered"><abbr title="Value of currency held">Value</abbr></th>
+                      <th data-head="remove"   class="has-text-centered is-hidden-touch"><abbr title="remove item">Remove</abbr></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <!-- put the table body here -->
+                  </tbody>
+                </table>
+              </div>
+            
+              <div class="container my-3">
+                <a href="https://www.coinbase.com/" class="button is-dark" id="buy-sell-btn">Buy and sell crypto</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+    
+  <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>

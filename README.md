@@ -1,6 +1,5 @@
 # Ctyptfolio
 
-
 # Group Project - API
 
 <h2 style="text-align:center"> Table of Contents </h2>
@@ -72,3 +71,4 @@ Meyerweb.com (CSS Reset)
 <img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
 <img alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/>
 <img alt="JS" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+>>>>>>> main
